@@ -1,0 +1,51 @@
+{
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "prettier"
+    // "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "react",
+    "react-hooks"
+    // "prettier"
+  ],
+  "globals": {
+    "$": false,
+    "_": false,
+    "jQuery": false
+  },
+  "rules": {
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+    "semi": [
+      "error",
+      "never"
+    ],
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1,
+        "ignoreComments": true
+      }
+    ]
+    // "prettier/prettier": [
+    //   "warn",
+    //   {
+    //     // https://prettier.io/docs/en/options.html
+    //     "singleQuote": true,
+    //     "semi": false,
+    //     "quoteProps": "consistent",
+    //     "bracketSpacing": true
+    //     // "printWidth": 2000
+    //   }
+    // ],
+    // "react/jsx-filename-extension": [
+    //   "warn",
+    //   {
+    //     "extensions": [".js", ".jsx"]
+    //   }
+    // ]
+  }
+}

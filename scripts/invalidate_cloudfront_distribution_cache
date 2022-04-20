@@ -1,0 +1,28 @@
+#!/bin/bash
+
+AWS_PROFILE=CHANGETHIS
+DISTRIBUTION_ID=CHANGETHISTOO
+DATESTRING=$(date +"%Y-%m-%d_%H-%M-%S")
+
+JSON_STRING='
+{
+  "Paths": {
+    "Quantity": 1,
+    "Items": ["/*"]
+  },
+  "CallerReference": "'$DATESTRING'"
+}
+'
+echo $JSON_STRING > /tmp/invalidate_cloudfront.json
+
+# http://docs.aws.amazon.com/cli/latest/reference/cloudfront/create-invalidation.html
+aws cloudfront create-invalidation \
+  --distribution-id $DISTRIBUTION_ID \
+  --profile $AWS_PROFILE \
+  --invalidation-batch file:///tmp/invalidate_cloudfront.json
+
+rm /tmp/invalidate_cloudfront.json
+
+
+
+

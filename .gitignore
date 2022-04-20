@@ -1,0 +1,8 @@
+*.log
+node_modules
+.elasticbeanstalk/
+.env*
+.DS_Store
+_site
+.jekyll-cache
+static_site/js/build/*.js
